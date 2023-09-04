@@ -1,2 +1,2 @@
 move_dist:
-	cp -r dist /mnt/c/Users/Admin/Downloads/	
+	cp -r dist /mnt/c/Users/Admin/Downloads/
