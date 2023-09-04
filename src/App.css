@@ -52,3 +52,32 @@
   border-radius: 50%;
   height: 102px;
 }
+
+input{
+  background-color: white !important;
+  color: black;
+}
+
+.day{
+  position: relative;
+  width: 102px;
+  height: 102;
+  margin: 0 10px 0 10px;
+}
+
+svg{
+  width: 102px;
+  height: 102px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.day-count{
+  color: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

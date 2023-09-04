@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./App.css";
-import { message, Upload } from "antd";
+import {message, Upload } from "antd";
 import moment from "moment";
 import type { UploadChangeParam } from "antd/es/upload";
 import type { RcFile, UploadFile, UploadProps } from "antd/es/upload/interface";
+import HeartTwoTone from "@ant-design/icons/lib/icons/HeartTwoTone";
 
 const beforeUpload = (file: RcFile) => {
   const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
@@ -24,20 +25,15 @@ const getBase64 = (img: RcFile, callback: (url: string) => void) => {
 };
 
 const App = () => {
-  const [day, setDay] = useState("");
+  const [dayCount, setDayCount] = useState<number>();
   const [imageUrl1, setImageUrl1] = useState<string>();
   const [imageUrl2, setImageUrl2] = useState<string>();
 
   const countTheDays = (event: { target: { value: any } }) => {
     const day = event.target.value;
-    setDay(day);
     const dayNow = moment().format("YYYY-MM-DD");
-    const khoangCach = moment(dayNow).diff(day, "days");
-    alert(
-      `Khoảng cách từ ngày ${moment(day).format(
-        "DD/MM/YYYY",
-      )} đến ngày hôm nay là ${khoangCach} ngày.`,
-    );
+    const dayGap = moment(dayNow).diff(day, "days");
+    setDayCount(dayGap);
   };
 
   const handleChange1: UploadProps["onChange"] = (
@@ -64,6 +60,8 @@ const App = () => {
     </div>
   );
 
+  console.log(dayCount);
+
   return (
     <div>
       <div style={{ display: "flex" }}>
@@ -82,9 +80,21 @@ const App = () => {
             uploadButton
           )}
         </Upload>
-        
-          <label htmlFor="ngay">Chọn ngày: </label>
-          <input type="date" id="ngay" value={day} onChange={countTheDays} />
+        {!dayCount ? (
+          <input
+            type="date"
+            id="ngay"
+            onChange={countTheDays}
+            placeholder="Chọn ngày"
+          />
+          // <DatePicker onChange={() => countTheDays} />
+        ) : (
+          <div className="day">
+            <HeartTwoTone twoToneColor="#eb2f96" />
+            <div className="day-count">{dayCount}</div>
+          </div>
+        )}
+
         <Upload
           name="avatar"
           listType="picture-circle"
