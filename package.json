@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.5",
+    "@mantine/core": "^6.0.19",
+    "@tabler/icons-react": "^2.32.0",
     "antd": "^5.8.5",
     "date-fns": "^2.30.0",
     "moment": "^2.29.4",
