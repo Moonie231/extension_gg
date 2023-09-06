@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.5",
-    "@mantine/core": "^6.0.19",
+    "@mantine/core": "7.0.0-beta.3",
+    "@mantine/hooks": "7.0.0-beta.3",
     "@tabler/icons-react": "^2.32.0",
     "antd": "^5.8.5",
     "date-fns": "^2.30.0",

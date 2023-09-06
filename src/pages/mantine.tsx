@@ -1,5 +1,5 @@
 import "../App.css";
-import { Avatar, Tabs, Text } from "@mantine/core";
+import { Avatar, Tabs, Text, Button } from "@mantine/core";
 
 const Mantine = () => {
   return (
@@ -16,6 +16,7 @@ const Mantine = () => {
       </Tabs>
       <div style={{ display: "flex" }}>
         <Avatar radius="xl" />
+        <Button>Hello</Button>
         <Text
           size="xl"
           fw={900}
