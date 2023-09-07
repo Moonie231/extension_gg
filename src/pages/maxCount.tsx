@@ -6,9 +6,11 @@ const MaxCount = () => {
   const [timeLeft, setTimeLeft] = React.useState(10);
 
   useEffect(() => {
-    setTimeout(() => {
+    if (timeLeft > 0 ){
+        setTimeout(() => {
         setTimeLeft(timeLeft - 1);
     }, 1000);
+    } else return;
   }, [timeLeft]);
 
   return (
